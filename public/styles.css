@@ -1,0 +1,85 @@
+/* Сброс отступов */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .menu {
+    display: flex; /* Располагает элементы в строку */
+    list-style: none; /* Убирает маркеры списка */
+    padding: 0; /* Убирает отступы */
+    margin: 0; /* Убирает внешние отступы */
+    justify-content: center; /* Центрирует меню по горизонтали */
+  }
+  
+  .menu li {
+    margin: 0 15px; /* Добавляет отступы между элементами */
+  }
+  
+  .menu a {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: #ffffff; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    padding: 5px 10px; /* Внутренние отступы для кликабельности */
+  }
+  
+  .menu a:hover {
+    background-color: #f4f4f4; /* Меняет фон при наведении */
+    border-radius: 5px; /* Скругляет углы фона при наведении */
+    color: #007BFF; /* Меняет цвет текста при наведении */
+  }
+  
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .text-section h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .text-section p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .links-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+    justify-items: center;
+  }
+  
+  .link-box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .link-box a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .link-box a:hover {
+    color: #007BFF;
+  }

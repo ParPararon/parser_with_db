@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 1</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">График 1</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/page1">Page 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="/page2">Page 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="/page3">Page 3</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1>График количества объявлений</h1>
+    <div style="width: 80%; height: 120%; margin: auto;">
+      <canvas id="chart"></canvas>
+    </div>
+    <script>
+      const chartData = <%- JSON.stringify(chartData) %>;
+
+      const labels = chartData.map(item => item.source);
+      const data = chartData.map(item => item.count);
+
+      const ctx = document.getElementById('chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Количество объявлений',
+            data: data,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+            legend: {
+                position: 'top',
+            }
+            }
+        }
+      });
+    </script>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
